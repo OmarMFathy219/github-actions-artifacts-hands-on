@@ -17,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: hello-artifact
-        path: hello.txt
+        path: ./artifacts
 
   download:
     needs: build
@@ -28,7 +28,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: hello-artifact
-        path: ./artifacts
          
     - name: Display Artifact
       run: cat ./artifacts/hello.txt
